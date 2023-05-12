@@ -11,10 +11,10 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
+// react-native-navigation
+import com.reactnativenavigation.react.NavigationPackage;
 // react-native-splash-screen
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
-// react-native-sqlite-storage
-import org.pgsqlite.SQLitePluginPackage;
 
 public class PackageList {
   private Application application;
@@ -60,8 +60,8 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
-      new SplashScreenReactPackage(),
-      new SQLitePluginPackage()
+      new NavigationPackage(reactNativeHost),
+      new SplashScreenReactPackage()
     ));
   }
 }
